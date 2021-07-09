@@ -67,7 +67,7 @@ func makeHandler(fn func(http.ResponseWriter, *http.Request, string)) http.Handl
 	}
 }
 
-var templates = template.Must(template.ParseFiles("view.html", "edit.html"))
+var templates = template.Must(template.ParseFiles("tmpl/view.html", "tmpl/edit.html"))
 
 func renderTemplate(w http.ResponseWriter, tmpl string, p *Page) {
 	err := templates.ExecuteTemplate(w, tmpl+".html", p)
